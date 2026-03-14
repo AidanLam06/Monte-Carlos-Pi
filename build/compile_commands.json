@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/alam/Work/projects/cpp/pi_estimator_MC/build",
+  "command": "/usr/bin/clang++ -I/home/alam/Work/projects/cpp/pi_estimator_MC/include -g -std=c++17 -o CMakeFiles/pi_estimator_MC.dir/src/main.cpp.o -c /home/alam/Work/projects/cpp/pi_estimator_MC/src/main.cpp",
+  "file": "/home/alam/Work/projects/cpp/pi_estimator_MC/src/main.cpp",
+  "output": "/home/alam/Work/projects/cpp/pi_estimator_MC/build/CMakeFiles/pi_estimator_MC.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/alam/Work/projects/cpp/pi_estimator_MC/build",
+  "command": "/usr/bin/clang++ -I/home/alam/Work/projects/cpp/pi_estimator_MC/include -g -std=c++17 -o CMakeFiles/pi_estimator_MC.dir/src/Dot.cpp.o -c /home/alam/Work/projects/cpp/pi_estimator_MC/src/Dot.cpp",
+  "file": "/home/alam/Work/projects/cpp/pi_estimator_MC/src/Dot.cpp",
+  "output": "/home/alam/Work/projects/cpp/pi_estimator_MC/build/CMakeFiles/pi_estimator_MC.dir/src/Dot.cpp.o"
+}
+]

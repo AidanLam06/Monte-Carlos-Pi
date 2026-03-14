@@ -1,0 +1,3 @@
+/home/alam/Work/projects/cpp/pi_estimator_MC/build/CMakeFiles/pi_estimator_MC.dir
+/home/alam/Work/projects/cpp/pi_estimator_MC/build/CMakeFiles/edit_cache.dir
+/home/alam/Work/projects/cpp/pi_estimator_MC/build/CMakeFiles/rebuild_cache.dir
