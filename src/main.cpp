@@ -25,27 +25,22 @@ int main() {
     std::mt19937 gen(rd());
     std::uniform_real_distribution<double> dist(-RADIUS, RADIUS);
 
-    std::vector<Dot> dots;
-    dots.reserve(num_dots);
     double x, y;
-
-    // 1) populate vector
-    for (int i = 0; i < num_dots; i++) {
-        x = dist(gen), y = dist(gen);
-        dots.emplace_back(Dot(x, y));
-    }
-
     int num_dots_inside;
 
-    // 2) display pi estimation
     for (int i = 0; i < num_dots; i++) {
-        if (dots.at(i).is_inside) {
+        x = dist(gen), y = dist(gen);
+        Dot dot(x, y);
+        if (dot.is_inside) {
             ++num_dots_inside;
         }
-        std::cout << "estimate at " << i << " dots: " << num_dots_inside << "/" << i << " " << dots.at(i).x << ", " << dots.at(i).y << "\n";
+        if ((i+1) % 100000 == 0) {
+            std::cout << 4 * static_cast<double>(num_dots_inside) / num_dots;
+        }
     }
 
     // final estimate. Since π/4 = num_dots_inside/num_dots, and we know r, rearrange as π = 4(ndi/nd)
-    std::cout << "final estimate is: " << 4 * static_cast<double>(num_dots_inside) / num_dots;
+    std::cout << "final estimate is: " 
+              << 4 * static_cast<double>(num_dots_inside) / num_dots;
 
 }
