@@ -38,7 +38,7 @@ int main() {
             ++num_dots_inside;
         }
         if ((i+1) % 100000 == 0) {
-            std::cout << 4 * static_cast<double>(num_dots_inside) / num_dots << "\n";
+            std::cout << 4 * static_cast<double>(num_dots_inside) / i << "\n";
         }
     }
 
