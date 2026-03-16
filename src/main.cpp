@@ -11,6 +11,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <chrono>
 
 #include "Dot.hpp"
 
@@ -28,6 +29,8 @@ int main() {
     double x, y;
     int num_dots_inside;
 
+    const auto start{std::chrono::steady_clock::now()};
+
     for (int i = 0; i < num_dots; i++) {
         x = dist(gen), y = dist(gen);
         Dot dot(x, y);
@@ -35,12 +38,16 @@ int main() {
             ++num_dots_inside;
         }
         if ((i+1) % 100000 == 0) {
-            std::cout << 4 * static_cast<double>(num_dots_inside) / num_dots;
+            std::cout << 4 * static_cast<double>(num_dots_inside) / num_dots << "\n";
         }
     }
 
+    const auto finish{std::chrono::steady_clock::now()};
+    const std::chrono::duration<double> elapsed_seconds{finish - start};
+
     // final estimate. Since π/4 = num_dots_inside/num_dots, and we know r, rearrange as π = 4(ndi/nd)
-    std::cout << "final estimate is: " 
-              << 4 * static_cast<double>(num_dots_inside) / num_dots;
+    std::cout << "\nfinal estimate is: " 
+              << 4 * static_cast<double>(num_dots_inside) / num_dots 
+              << "\nTook " << elapsed_seconds.count() << " seconds";
 
 }
