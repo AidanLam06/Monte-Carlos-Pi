@@ -9,45 +9,48 @@
 // 4) Combine pi estimation logic and SDL2 animation together and add final polishing
 
 #include <iostream>
-#include <random>
-#include <vector>
-#include <chrono>
+#include <format>
+#include <SDL2/SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL2/SDL.h>
 
-#include "Dot.hpp"
+#include "Game.hpp"
 
-int main() {
-    int num_dots;
-    std::string buf;
-    std::cout << "Enter number of dots (more dots, less error): ";
-    std:getline(std::cin, buf);
-    num_dots = stoi(buf);
-
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<double> dist(-RADIUS, RADIUS);
-
-    double x, y;
-    int num_dots_inside;
-
-    const auto start{std::chrono::steady_clock::now()};
-
-    for (int i = 0; i < num_dots; i++) {
-        x = dist(gen), y = dist(gen);
-        Dot dot(x, y);
-        if (dot.is_inside) {
-            ++num_dots_inside;
-        }
-        if ((i+1) % 100000 == 0) {
-            std::cout << 4 * static_cast<double>(num_dots_inside) / i << "\n";
-        }
+void initialize_SDL() {
+    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+        throw std::runtime_error(std::format("SDL_Init Error: {}", SDL_GetError()));
+    }
+    // IMG_Init returns a bitmask of the flags successfully initialized
+    int flags = IMG_INIT_PNG;
+    if (!(IMG_Init(flags) & flags)) {
+        throw std::runtime_error(std::format("IMG_Init Error: {}", IMG_GetError()));
     }
 
-    const auto finish{std::chrono::steady_clock::now()};
-    const std::chrono::duration<double> elapsed_seconds{finish - start};
+    if (TTF_Init() == -1) {
+        throw std::runtime_error(std::format("TTF_Init Error: {}", TTF_GetError()));
+    }
+}
 
-    // final estimate. Since π/4 = num_dots_inside/num_dots, and we know r, rearrange as π = 4(ndi/nd)
-    std::cout << "\nfinal estimate is: " 
-              << 4 * static_cast<double>(num_dots_inside) / num_dots 
-              << "\nTook " << elapsed_seconds.count() << " seconds";
+void close() {
+    TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
+}
 
+int main() {
+
+    int exit_val = EXIT_SUCCESS;
+
+    try {
+        initialize_SDL();
+        Game game;
+        game.init();
+        game.run();
+    } catch (const std::runtime_error &e) {
+        std::cerr << e.what() << std::endl;
+        exit_val = EXIT_FAILURE;
+    }
+
+    close();
+    return exit_val;
 }
