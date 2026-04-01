@@ -1,0 +1,8 @@
+A program that estimates pi via the Monte Carlo method.
+
+v1: 
+Ultra-basic heap allocated vector that stores Dot objects in one for loop and then performs a rolling calculation in another for loop and prints the estimated pi result. Very slow
+
+v2: Removed printing all the numbers, limiting to only printing the current estimation at every 100k values in the main for loop.
+Full calculation performed while points are generated. Changed compiler to release mode for compiler optimizations (cmake -DCMAKE_BUILD_TYPE=Release ..).
+Added a timer as well. 1 mil dots takes ~0.025s, 10 mil dots takes ~0.25s, 100 mil dots takes ~25s.
