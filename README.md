@@ -10,7 +10,7 @@ Removed printing all the numbers, limiting to only printing the current estimati
 Full calculation performed while points are generated. Changed compiler to release mode for compiler optimizations (cmake -DCMAKE_BUILD_TYPE=Release ..).
 Added a timer as well. 1 mil dots takes ~0.025s, 10 mil dots takes ~0.25s, 100 mil dots takes ~25s.
 
-### v3: 
+### v3 (FINAL): 
 Re-uses calculation logic from v2 (with slight performance improvements) and now shows a visual demonstration of the points being thrown onto an image of a circle enclosed within a square.
 The live estimation shown in the top left of the display is recalculated every 100 iterations.
 Uses the SDL2 library
