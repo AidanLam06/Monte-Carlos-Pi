@@ -19,7 +19,7 @@ int main() {
     int num_dots;
     std::string buf;
     std::cout << "Enter number of dots (more dots, less error): ";
-    std:getline(std::cin, buf);
+    std::getline(std::cin, buf);
     num_dots = stoi(buf);
 
     std::random_device rd;
@@ -27,7 +27,7 @@ int main() {
     std::uniform_real_distribution<double> dist(-RADIUS, RADIUS);
 
     double x, y;
-    int num_dots_inside;
+    int num_dots_inside = 0;
 
     const auto start{std::chrono::steady_clock::now()};
 
