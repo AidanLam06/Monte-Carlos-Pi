@@ -18,7 +18,7 @@ int main() {
     int num_dots;
     std::string buf;
     std::cout << "Enter number of dots (more dots, less error): ";
-    std:getline(std::cin, buf);
+    std::getline(std::cin, buf);
     num_dots = stoi(buf);
 
     std::random_device rd;
@@ -35,7 +35,7 @@ int main() {
         dots.emplace_back(Dot(x, y));
     }
 
-    int num_dots_inside;
+    int num_dots_inside = 0;
 
     // 2) display pi estimation
     for (int i = 0; i < num_dots; i++) {
