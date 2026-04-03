@@ -1,13 +1,3 @@
-// Current gaps in knowledge ordered based on priority
-// 1) how does SDL2 work
-// 2) how do you make temporary objects in C++ 
-
-// plan of action
-// 1) create a pi estimation simulation without any fancy stuff yet. 
-// 2) add some small improvements like a rolling total to the pi estimation
-// 3) make a demo animation in SDL2
-// 4) Combine pi estimation logic and SDL2 animation together and add final polishing
-
 #include <iostream>
 #include <format>
 #include <SDL2/SDL_image.h>
