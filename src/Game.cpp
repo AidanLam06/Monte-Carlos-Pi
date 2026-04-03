@@ -112,18 +112,14 @@ void Game::init() {
 }
 
 void Game::updateText(TextElement& element, const std::string& message) {
-    // 1. Create surface
     SDL_Surface* tempSurf = TTF_RenderText_Solid(this->font.get(), message.c_str(), font_color);
     if (!tempSurf) return;
 
-    // 2. Replace the old texture (using .reset() if you use unique_ptr)
     element.texture.reset(SDL_CreateTextureFromSurface(this->renderer.get(), tempSurf));
     
-    // 3. Query the texture for its actual size
     int w, h;
     SDL_QueryTexture(element.texture.get(), NULL, NULL, &w, &h);
     
-    // 4. Update the Rect dimensions to prevent stretching
     element.rect = {10, 10, w, h};
 
     SDL_FreeSurface(tempSurf);
@@ -195,8 +191,6 @@ void Game::addPoints(int dots_to_update) {
     SDL_SetRenderTarget(this->renderer.get(), NULL);
 }
 
-// notes: keep scope as local as possible. Video shows event variable in Game class, but its better to keep it in run() since this is
-// the only function that needs it
 void Game::run() {
     bool is_running = true;
     bool simulation_complete = false;
@@ -216,7 +210,6 @@ void Game::run() {
                     std::cout << "Aborted. Progress: " << dots_generated << "/" << num_dots << " dots" << std::endl;
                 }
                 
-                // Always show the current estimate, even if incomplete
                 double final_est = (dots_generated == 0) ? 0 : 4.0 * num_dots_inside / dots_generated;
                 std::cout << "Estimate: " << final_est << std::endl;
 
