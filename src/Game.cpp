@@ -165,9 +165,6 @@ void Game::render() {
     SDL_RenderPresent(this->renderer.get());
 }
 
-// debug
-int g = 0;
-
 void Game::addPoints(int dots_to_update) {
     SDL_SetRenderTarget(
         this->renderer.get(),
