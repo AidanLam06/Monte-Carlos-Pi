@@ -2,7 +2,7 @@
 A program that estimates pi via a Monte Carlo simulation.
 
 The setup consists of a square with a side length x, and a circle placed inside that square with a diameter of x. The ratio of the areas of the circle and square is
-$\\ A_circle/A_square = (&pir^2)/(4r^2) = &pi/4 \$
+$\ A_circle/A_square = (&pir^2)/(4r^2) = &pi/4 \$
 
 ## Versions:
 ### v1: 
