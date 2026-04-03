@@ -15,7 +15,7 @@ $$M/N \approx \frac{\pi}{4}$$
 
 And then to solve for $\pi$ you simply move the 4 to the other side
 
-$$\pi \approx 4 * \frac{M}{N}$$
+$$\pi \approx 4 \times \frac{M}{N}$$
 
 ## Versions:
 ### v1: 
