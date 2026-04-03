@@ -11,7 +11,7 @@ $$x^2 + y^2 \le r^2$$
 
 As the number of points N becomes very large, the ratio of points inside the circle to the total points approximates the ratio of their areas
 
-$$M/N \approx \frac{\pi}{4}$$
+$$\frac{M}{N} \approx \frac{\pi}{4}$$
 
 And then to solve for $\pi$ you simply move the 4 to the other side
 
