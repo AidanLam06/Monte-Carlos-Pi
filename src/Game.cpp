@@ -179,8 +179,6 @@ void Game::addPoints(int dots_to_update) {
         double y = getRandomY();
         Dot dot(x, y);
 
-        std::cout << x << ", " << y << std::endl;
-
         if (dot.is_inside) {
             SDL_SetRenderDrawColor(this->renderer.get(),83,140,97,255);
             ++num_dots_inside;
