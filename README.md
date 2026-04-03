@@ -23,7 +23,7 @@ Ultra-basic heap allocated vector that stores Dot objects in one for loop and th
 
 ### v2: 
 Removed printing all the numbers, limiting to only printing the current estimation at every 100k values in the main for loop.
-Full calculation performed while points are generated. Changed compiler to release mode for compiler optimizations (cmake -DCMAKE_BUILD_TYPE=Release ..).
+Full calculation performed while points are generated. Changed compiler to release mode for compiler optimizations
 Added a timer as well.
 
 ### v3 (FINAL): 
