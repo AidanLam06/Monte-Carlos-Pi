@@ -29,4 +29,4 @@ Added a timer as well. 1 mil dots takes ~0.025s, 10 mil dots takes ~0.25s, 100 m
 ### v3 (FINAL): 
 Re-uses calculation logic from v2 (with slight performance improvements) and now shows a visual demonstration of the points being thrown onto an image of a circle enclosed within a square.
 The live estimation shown in the top left of the display is recalculated every 100 iterations.
-Uses the SDL2 library
+Uses the SDL2 library to show the "animation"
