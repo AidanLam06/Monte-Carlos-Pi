@@ -1,8 +1,13 @@
 ## Description:
 A program that estimates pi via a Monte Carlo simulation.
 
-The setup consists of a square with a side length x, and a circle placed inside that square with a diameter of x. The ratio of the areas of the circle and square is
+The setup consists of a square with a side length x, and a circle placed inside that square with a diameter of x. The ratio of the areas of the circle and square is:
+
 $$\frac{A_{circle}}{A_{square}} = \frac{\pi r^2}{4r^2} = \frac{\pi}{4}$$
+
+When you generate random points uniformly across the square, the probability that a point falls within the circle is proportional to the circle's area. By generating N total random points, you can count how many points (M) are located inside the circle
+
+$$x^2 + y^2 \le r^2$$
 
 ## Versions:
 ### v1: 
